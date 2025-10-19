@@ -1,0 +1,94 @@
+<div class="wrap">
+  <mat-card class="info">
+    <h2>Gestión de Empresas</h2>
+    <p class="muted">
+      Este módulo permite registrar empresas (con validación de RNC en DGII) y administrar el catálogo
+      mediante operaciones CRUD contra el WebAPI (.NET). Usa el menú lateral para navegar.
+    </p>
+
+    <mat-divider></mat-divider>
+
+    <section class="section">
+      <h3>Requerimientos de la prueba</h3>
+      <mat-list dense>
+        <mat-list-item>
+          <mat-icon matListItemIcon>check_circle</mat-icon>
+          <div matListItemTitle>Formulario “Crear empresa”</div>
+          <div matListItemLine>
+            RNC (búsqueda DGII), Nombre, Nombre comercial, Categoría, Esquema de pago, Estado,
+            Actividad económica, Rama gubernamental.
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>check_circle</mat-icon>
+          <div matListItemTitle>CRUD completo</div>
+          <div matListItemLine>
+            Operaciones contra WebAPI (.NET) usando procedimientos almacenados en SQL Server.
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>check_circle</mat-icon>
+          <div matListItemTitle>Paginación en frontend</div>
+          <div matListItemLine>
+            Listado con MatTable + MatPaginator.
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </section>
+
+    <section class="section">
+      <h3>Estructura del Frontend</h3>
+      <mat-list dense>
+        <mat-list-item>
+          <mat-icon matListItemIcon>folder</mat-icon>
+          <div matListItemTitle>modules/companies</div>
+          <div matListItemLine>models (api/model), adapters, services, pages (create/manage).</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>view_sidebar</mat-icon>
+          <div matListItemTitle>layout</div>
+          <div matListItemLine>Barra lateral fija + toolbar; el contenido se renderiza en el centro.</div>
+        </mat-list-item>
+      </mat-list>
+    </section>
+
+    <section class="section">
+      <h3>Notas técnicas</h3>
+      <mat-list dense>
+        <mat-list-item>
+          <mat-icon matListItemIcon>info</mat-icon>
+          <div matListItemTitle>Angular Material</div>
+          <div matListItemLine>Theme predefinido, densidad ligera y componentes standalone.</div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>dns</mat-icon>
+          <div matListItemTitle>API .NET</div>
+          <div matListItemLine>
+            Endpoints: <code>/api/companies</code> (CRUD) y
+            <code>/api/dgii/&#123;rnc&#125;</code> para búsqueda RNC.
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon matListItemIcon>security</mat-icon>
+          <div matListItemTitle>Validaciones</div>
+          <div matListItemLine>Formulario reactivo con validaciones de requeridos y feedback visual.</div>
+        </mat-list-item>
+      </mat-list>
+    </section>
+  </mat-card>
+
+  <mat-card class="note">
+    <div class="row">
+      <mat-icon>lightbulb</mat-icon>
+      <div>
+        <strong>Tip:</strong> Usa el menú lateral para ir a “Crear empresa” o “Gestionar empresa”.
+        Esta página es solo informativa.
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,59 @@
+.wrap {
+  padding: 16px;
+  display: grid;
+  place-items: center;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 980px;
+}
+
+mat-card-header {
+  padding-bottom: 0;
+  .mat-mdc-card-title { font-weight: 800; }
+  .mat-mdc-card-subtitle { color: #6b7280; }
+}
+
+.form.dense {
+  // Densidad compacta para todos los form-fields del formulario
+  .mat-mdc-form-field-infix {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  .mat-mdc-text-field-wrapper { border-radius: 10px; }
+  .mat-mdc-form-field-subscript-wrapper { margin-top: 2px; }
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+
+  /* 1/2/3 columnas según ancho */
+  grid-template-columns: 1fr;
+  @media (min-width: 720px) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 1080px) { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Botones dentro del RNC */
+.suffix-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+
+  .mat-mdc-icon-button {
+    width: 36px; height: 36px;
+  }
+}
+
+.divider { margin: 8px 0 4px; }
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 6px;
+
+  .mat-mdc-button-base { border-radius: 999px; } // pill sutil
+}

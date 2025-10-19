@@ -1,0 +1,82 @@
+<div class="wrap">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Crear empresa</mat-card-title>
+      <mat-card-subtitle>Completa los campos obligatorios (<strong>*</strong>)</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form class="form dense" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>RNC *</mat-label>
+            <input matInput formControlName="rnc" required placeholder="Ej: 1-01-12345-6" />
+            <div matSuffix class="suffix-actions">
+              <button mat-icon-button type="button"
+                      aria-label="Buscar RNC en DGII"
+                      (click)="searchRnc()"
+                      [disabled]="form.controls.rnc.invalid || searching()">
+                <mat-icon>{{ searching() ? 'hourglass_empty' : 'search' }}</mat-icon>
+              </button>
+              <button mat-icon-button type="button"
+                      aria-label="Limpiar RNC"
+                      (click)="form.controls.rnc.reset()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+            <mat-error *ngIf="form.controls.rnc.hasError('required')">Obligatorio</mat-error>
+            <mat-hint>Ingresa el RNC y presiona el ícono de búsqueda.</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Nombre de la empresa *</mat-label>
+            <input matInput formControlName="name" required />
+            <mat-error *ngIf="form.controls.name.hasError('required')">Obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Nombre comercial *</mat-label>
+            <input matInput formControlName="tradeName" required />
+            <mat-error *ngIf="form.controls.tradeName.hasError('required')">Obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Categoría</mat-label>
+            <input matInput formControlName="category" placeholder="Opcional" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Esquema de pago *</mat-label>
+            <input matInput formControlName="paymentScheme" />
+            <mat-error *ngIf="form.controls.paymentScheme.hasError('required')">Obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Estado *</mat-label>
+            <input matInput formControlName="status" />
+            <mat-error *ngIf="form.controls.status.hasError('required')">Obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Actividad económica *</mat-label>
+            <input matInput formControlName="economicActivity" required />
+            <mat-error *ngIf="form.controls.economicActivity.hasError('required')">Obligatorio</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-label>Rama gubernamental *</mat-label>
+            <input matInput formControlName="governmentBranch" required />
+            <mat-error *ngIf="form.controls.governmentBranch.hasError('required')">Obligatorio</mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-divider class="divider"></mat-divider>
+
+        <mat-card-actions align="end" class="actions">
+          <button mat-stroked-button type="button" (click)="form.reset()">Limpiar</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || saving()">Guardar</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

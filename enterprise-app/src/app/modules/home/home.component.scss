@@ -1,0 +1,53 @@
+.wrap {
+  display: grid;
+  gap: 16px;
+  padding: 8px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.info {
+  padding: 16px;
+}
+
+h2 {
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.muted {
+  color: #6b7280;
+  margin: 0 0 12px;
+}
+
+.section {
+  margin-top: 12px;
+}
+
+.section h3 {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.note {
+  padding: 12px 14px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.row mat-icon {
+  color: #f59e0b;
+}
+
+@media (max-width: 599px) {
+  .wrap {
+    padding: 0;
+  }
+}

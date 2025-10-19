@@ -1,0 +1,28 @@
+.wrap {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.search {
+  min-width: 280px;
+}
+
+.table {
+  margin-top: 12px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  white-space: nowrap;
+}
