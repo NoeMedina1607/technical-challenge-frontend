@@ -16,7 +16,6 @@ mat-card-header {
 }
 
 .form.dense {
-  // Densidad compacta para todos los form-fields del formulario
   .mat-mdc-form-field-infix {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
@@ -29,14 +28,11 @@ mat-card-header {
   display: grid;
   gap: 16px;
   margin-top: 16px;
-
-  /* 1/2/3 columnas según ancho */
   grid-template-columns: 1fr;
   @media (min-width: 720px) { grid-template-columns: repeat(2, 1fr); }
   @media (min-width: 1080px) { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Botones dentro del RNC */
 .suffix-actions {
   display: inline-flex;
   align-items: center;
@@ -55,5 +51,5 @@ mat-card-header {
   justify-content: flex-end;
   padding-top: 6px;
 
-  .mat-mdc-button-base { border-radius: 999px; } // pill sutil
+  .mat-mdc-button-base { border-radius: 999px; }
 }
